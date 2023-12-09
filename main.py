@@ -39,6 +39,9 @@ ret, thresh = cv2.threshold(filtered, 250, 255, cv2.THRESH_OTSU)
 plt.imshow(cv2.cvtColor(thresh, cv2.COLOR_BGR2RGB))
 plt.title('After applying OTSU threshold')
 plt.show()
+
+adaptive_thresh = cv2.adaptiveThreshold(filtered, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
+
 # Determine the shape of the input image
 image_shape = image.shape
 
